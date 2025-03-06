@@ -1,0 +1,27 @@
+
+
+<div class="course-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li routerLink="/student/student_dashboard" routerLinkActive="active">Home</li>
+        <li routerLink="/student/courses" routerLinkActive="active">Courses</li>
+        <li routerLink="/student/schedule" routerLinkActive="active">Course Schedules</li>
+        <li routerLink="/student/assesments" routerLinkActive="active">Assessments</li>
+        <li routerLink="/student/materials" routerLinkActive="active">Materials</li>
+        <li routerLink="/student/notifications" routerLinkActive="active">Notifications</li>
+        <li routerLink="/student/settings" routerLinkActive="active">Settings</li>
+        <li routerLink="/" routerLinkActive="active">Log Out</li>
+      </ul>
+    </aside>
+  
+    <!-- Main Content -->
+    <div class="main-content">
+    
+  
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+    </div>
+  </div>
+  
