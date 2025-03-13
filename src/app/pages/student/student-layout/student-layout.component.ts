@@ -9,19 +9,36 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './student-layout.component.html',
   styleUrl: './student-layout.component.css'
 })
-export class StudentLayoutComponent {
-
+export class StudentLayoutComponent{
   isOpen = true;
+  // studentid: any | string;
+  userId: string = '';  // User ID will be fetched from localStorage
+  date = ''
+
+
+
+
 
   toggleSidebar() {
-    this.isOpen = !this.isOpen;
+    this.isOpen = !this.isOpen;  // Toggle sidebar visibility
   }
 
   constructor
-  (
-    private router:Router
-  ) {}
+    (
+   
+      private router:Router
+    ) {
 
+  }
+
+  ngOnInit(): void {
+
+ 
+  }
+
+  getStudentInfo(studentid: string) {
+    
+  }
 
   logout() {
     // Clear local storage
@@ -31,3 +48,8 @@ export class StudentLayoutComponent {
     this.router.navigate(['/']);
   }
 }
+
+
+
+
+
