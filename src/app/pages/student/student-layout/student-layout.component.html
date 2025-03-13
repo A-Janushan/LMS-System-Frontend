@@ -1,27 +1,92 @@
+<div class="sidebar" [class.open]="isOpen">
+  <div class="logo-details">
+      <div >
+          <img class="icon" src="graduation_cap.png" alt="" width="45px">
+      </div>
 
-
-<div class="course-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <ul>
-        <li routerLink="/student/student_dashboard" routerLinkActive="active">Home</li>
-        <li routerLink="/student/courses" routerLinkActive="active">Courses</li>
-        <li routerLink="/student/schedule" routerLinkActive="active">Course Schedules</li>
-        <li routerLink="/student/assesments" routerLinkActive="active">Assessments</li>
-        <li routerLink="/student/materials" routerLinkActive="active">Materials</li>
-        <li routerLink="/student/notifications" routerLinkActive="active">Notifications</li>
-        <li routerLink="/student/settings" routerLinkActive="active">Settings</li>
-        <li routerLink="/" routerLinkActive="active">Log Out</li>
-      </ul>
-    </aside>
-  
-    <!-- Main Content -->
-    <div class="main-content">
-    
-  
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
-    </div>
+    <div class="logo_name">CampusSphear</div>
+    <i class='bx' [ngClass]="isOpen ? 'bx-menu-alt-right' : 'bx-menu'" id="btn" (click)="toggleSidebar()"></i>
   </div>
-  
+  <ul class="nav-list">
+
+    <li>
+      <a href="#" [routerLink]="['/student/student_dashboard']">
+        <i class='bx bx-home'></i>
+        <span class="links_name">Home</span>
+      </a>
+      <span class="tooltip">Home</span>
+    </li>
+
+    <li>
+      <a href="#" [routerLink]="['/admin/viewTeacher']">
+          <i class='bx bx-chalkboard'></i>
+        <span class="links_name">Teachers List</span>
+      </a>
+      <span class="tooltip">Teachers List</span>
+    </li>
+
+    <li>
+      <a href="#" [routerLink]="['/admin/viewStaff']">
+          <i class='bx bx-group'></i>
+          <span class="links_name">Staff List</span>
+      </a>
+      <span class="tooltip">Staff List</span>
+  </li>
+
+
+  <li>
+    <a href="#" [routerLink]="['/admin/viewStudents']">
+        <i class="bi bi-person"></i>
+      <span class="links_name">Students List</span>
+    </a>
+    <span class="tooltip">Students List</span>
+  </li>
+
+
+    <li>
+      <a href="#" [routerLink]="['/admin/viewAttendance']">
+          <i class='bx bx-check-circle'></i>
+        <span class="links_name">Attendance Report</span>
+      </a>
+      <span class="tooltip">Attendance Overview</span>
+    </li>
+
+    <li>
+      <a href="#" [routerLink]="['/admin/viewTimetable']" >
+          <i class='bx bx-calendar'></i>
+        <span class="links_name">Timetable List</span>
+      </a>
+      <span class="tooltip">Timetable List</span>
+    </li>
+
+
+
+    <li>
+      <a href="#" [routerLink]="['/admin/viewFeedback']" >
+          <i class='bx bx-message-dots'></i>
+        <span class="links_name">View Feedback's</span>
+      </a>
+      <span class="tooltip">View Feedback's</span>
+    </li>
+
+    <li class="logout">
+      <div class="logout-details">
+        <div class="name_job">
+          <div class="name">Administrator</div>
+        </div>
+      </div>
+      <i
+      class='bx bx-log-out'
+      id="log_out"
+      (click)="logout()"
+    ></i>      </li>
+
+  </ul>
+</div>
+
+<section class="home-section" [class.open]="isOpen">
+  <div class="text">
+      <router-outlet></router-outlet>
+  </div>
+</section>
+
