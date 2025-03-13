@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-admin-layout',
@@ -11,17 +11,23 @@ import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
   styleUrl: './admin-layout.component.css'
 })
 export class AdminLayoutComponent {
-  coursesOpen = false;
+  isOpen = true;
 
-  toggleCourses() {
-    this.coursesOpen = !this.coursesOpen;
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
+  }
 
-    // Add/remove class for smooth transition
-    const content = document.querySelector('.accordion-content') as HTMLElement;
-    if (this.coursesOpen) {
-      content?.classList.add('show');
-    } else {
-      content?.classList.remove('show');
-    }
+  constructor
+  (
+    private router:Router
+  ) {}
+
+
+  logout() {
+    // Clear local storage
+    localStorage.clear();
+
+    // Redirect to the home page
+    this.router.navigate(['/']);
   }
 }
