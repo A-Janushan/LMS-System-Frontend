@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { LandingPageComponent } from './components/shared/landing-page/landing-page.component';
 import { LoginComponent } from './components/shared/login/login.component';
 import { RegisterComponent } from './components/shared/register/register.component';
+import { StaffManagementComponent } from './components/admin/staff-management/staff-management.component';
+import { StaffLayoutComponent } from './pages/staff/staff-layout/staff-layout.component';
 
 export const routes: Routes = [
     {
@@ -11,6 +13,10 @@ export const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+      },
+      {
+        path: 'staff',
+        component: StaffLayoutComponent,
       },
       {
         path: 'register',
